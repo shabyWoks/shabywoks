@@ -1,6 +1,13 @@
 import uuid from 'uuid';
 
-export const addLibraryItem = (libraryItem) => {
+const libraryItemDefault = {
+    name: '',
+    tag: '',
+    description: '',
+    docsLink: ''
+};
+
+export const addLibraryItem = (libraryItem = libraryItemDefault) => {
     return {
         type: 'ADD_LIBRARY_ITEM',
         libraryItem: {
@@ -17,7 +24,7 @@ export const editLibraryItem = (libraryItem) => {
     }
 }
 
-export const rempveLibraryItem = (libraryItemId) => {
+export const removeLibraryItem = (libraryItemId = '-1') => {
     return {
         type: 'REMOVE_LIBRARY_ITEM',
         libraryItemId

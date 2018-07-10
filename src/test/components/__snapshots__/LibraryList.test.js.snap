@@ -6,6 +6,7 @@ exports[`should render library list correctly when items available 1`] = `
     item={
       Object {
         "description": "no description",
+        "docsLink": "no link",
         "id": "1",
         "name": "react-redux",
         "tag": "React",
@@ -17,6 +18,7 @@ exports[`should render library list correctly when items available 1`] = `
     item={
       Object {
         "description": "no description",
+        "docsLink": "no link",
         "id": "2",
         "name": "react-router-dom",
         "tag": "React",
@@ -28,6 +30,7 @@ exports[`should render library list correctly when items available 1`] = `
     item={
       Object {
         "description": "no description",
+        "docsLink": "no link",
         "id": "3",
         "name": "lodash",
         "tag": "Node",
@@ -39,6 +42,7 @@ exports[`should render library list correctly when items available 1`] = `
     item={
       Object {
         "description": "no description",
+        "docsLink": "no link",
         "id": "4",
         "name": "numeral",
         "tag": "Node",

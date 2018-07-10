@@ -1,4 +1,4 @@
-export const selectorLibraryItem = (libraryItems, filters) => {
+const selectorLibraryItem = (libraryItems = [], filters) => {
     return libraryItems.filter(
         (libraryItem) => {
             return libraryItem.tag.toLowerCase().includes(filters.filterBy.toLowerCase());
@@ -15,3 +15,5 @@ export const selectorLibraryItem = (libraryItems, filters) => {
         }
     )
 }
+
+export default selectorLibraryItem;

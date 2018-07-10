@@ -6,6 +6,7 @@ exports[`should render edit library item correctly 1`] = `
     libraryItem={
       Object {
         "description": "no description",
+        "docsLink": "no link",
         "id": "1",
         "name": "react-redux",
         "tag": "React",

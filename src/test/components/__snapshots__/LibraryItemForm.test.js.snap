@@ -30,6 +30,7 @@ exports[`should have rendered library item form correctly 1`] = `
   <input
     onChange={[Function]}
     type="text"
+    value="no link"
   />
    
   <br />

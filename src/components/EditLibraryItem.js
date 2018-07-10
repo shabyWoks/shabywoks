@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import LibraryItemForm from './LibraryItemForm';
-import { editLibraryItem, rempveLibraryItem } from '../actions/libraryA';
+import { editLibraryItem, removeLibraryItem } from '../actions/libraryA';
 
 export class EditLibraryItem extends React.Component {
     onSubmit = (libraryItem) => {
