@@ -2,7 +2,7 @@
 
 exports[`should render edit library item correctly 1`] = `
 <div>
-  <LibraryItemForm
+  <Connect(LibraryItemForm)
     libraryItem={
       Object {
         "description": "no description",

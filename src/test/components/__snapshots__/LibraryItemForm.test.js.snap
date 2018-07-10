@@ -2,42 +2,70 @@
 
 exports[`should have rendered library item form correctly 1`] = `
 <div>
-  Tag Name: 
+  Tag Name:
+  <select
+    disabled={false}
+    hidden={false}
+    onChange={[Function]}
+    value="React"
+  >
+    <option
+      key="86"
+      value=""
+    >
+       
+      Select
+    </option>
+    <option
+      key="1"
+      value="React"
+    >
+      React
+    </option>
+    <option
+      key="2"
+      value="Node"
+    >
+      Node
+    </option>
+  </select>
   <input
+    disabled={true}
     onChange={[Function]}
     type="text"
     value="React"
   />
-   
+  <button
+    onClick={[Function]}
+  >
+    Add Tag
+  </button>
   <br />
-  Name: 
+  Name:
   <input
     onChange={[Function]}
     type="text"
     value="react-redux"
   />
-   
   <br />
-  Description: 
+  Description:
   <input
     onChange={[Function]}
     type="text"
     value="no description"
   />
-   
   <br />
-  Docs Link: 
+  Docs Link:
   <input
     onChange={[Function]}
     type="text"
     value="no link"
   />
-   
   <br />
   <button
     onClick={[Function]}
   >
-    ADD
+    EDIT
   </button>
 </div>
 `;

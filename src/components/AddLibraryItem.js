@@ -11,7 +11,9 @@ export class AddLibraryItem extends React.Component {
     render () {
         return (
             <div>
-                <LibraryItemForm onSubmit={this.onSubmit}/>
+                <LibraryItemForm
+                    onSubmit={this.onSubmit} 
+                />
             </div>
         );
     }

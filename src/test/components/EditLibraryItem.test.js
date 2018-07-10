@@ -2,6 +2,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import {EditLibraryItem} from '../../components/EditLibraryItem';
 import libraryItems from '../fixtures/libraryItems';
+import LibraryItemForm from '../../components/LibraryItemForm';
 
 let removeLibraryItem, editLibraryItem, wrapper, history;
 
@@ -22,7 +23,7 @@ test('should handle on click correctly', () => {
 });
 
 test('should handle on submit correctly', () => {
-    wrapper.find('LibraryItemForm').prop('onSubmit')(libraryItems[0]);
+    wrapper.find(LibraryItemForm).prop('onSubmit')(libraryItems[0]);
     expect(editLibraryItem).toHaveBeenLastCalledWith(libraryItems[0]);
     expect(history.push).toHaveBeenLastCalledWith("/");
 });

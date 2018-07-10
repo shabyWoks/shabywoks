@@ -3,6 +3,11 @@ const libraryReducerDefault = {
     libraryItems: []
 };
 
+// const tag = {
+//     id: '',
+//     name: ''
+// }
+
 // const libraryItem = {
 //     id: '',
 //     tag: '',
@@ -19,6 +24,10 @@ const libraryReducer = (state= libraryReducerDefault, action) => {
                 libraryItems : [
                     ...state.libraryItems,
                     action.libraryItem
+                ],
+                tags: [
+                    ...state.tags,
+                    ...((state.tags.filter((tag) => tag.name.toLowerCase() === action.tag.name.toLowerCase())).length === 0 ?  (action.tag.name === '' ? [] : [action.tag]) : [] )
                 ]
             };
         case 'EDIT_LIBRARY_ITEM':

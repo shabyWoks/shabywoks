@@ -38,6 +38,10 @@ test('should execute add library item correctly with value', () => {
         libraryItem: {
             ...libraryItems[0],
             id: expect.any(String)
+        },
+        tag: {
+            id: expect.any(String),
+            name: libraryItems[0].tag
         }
         
     });
@@ -56,6 +60,10 @@ test('should execute add library item correctly with default value', () => {
         libraryItem: {
             ...libraryItemDefault,
             id: expect.any(String)
+        },
+        tag: {
+            id: expect.any(String),
+            name: ''
         }
         
     });

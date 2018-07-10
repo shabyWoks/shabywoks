@@ -2,7 +2,7 @@
 
 exports[`should render add library item correctly 1`] = `
 <div>
-  <LibraryItemForm
+  <Connect(LibraryItemForm)
     onSubmit={[Function]}
   />
 </div>

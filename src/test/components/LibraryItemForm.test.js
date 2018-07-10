@@ -1,25 +1,46 @@
 import React from 'react';
 import {shallow} from 'enzyme';
-import LibraryItemForm from '../../components/LibraryItemForm';
+import {LibraryItemForm} from '../../components/LibraryItemForm';
 import libraryItems from '../fixtures/libraryItems';
 
-let onSubmit, wrapper;
+let onSubmit, wrapper, tags;
 
 beforeEach(() => {
     onSubmit = jest.fn();
-    wrapper = shallow(<LibraryItemForm libraryItem={libraryItems[0]} onSubmit={onSubmit}/>);
+    tags = [{
+        id: '1',
+        name: 'React'
+    }, {
+        id: '2',
+        name: 'Node'
+    }]
+    wrapper = shallow(<LibraryItemForm libraryItem={libraryItems[0]} onSubmit={onSubmit} tags={tags}/>);
 })
 
 test('should have rendered library item form correctly', () => {
     expect(wrapper).toMatchSnapshot();
 });
 
-test('should handle tag change correctly', () => {
+test('should handle input tag change correctly', () => {
     const value= "New Value";
     wrapper.find('input').at(0).simulate('change', {
         target: {value: value }
     });
     expect(wrapper.state('tag')).toBe(value);
+});
+
+test('should handle select tag change correctly', () => {
+    const value= "New Value";
+    wrapper.find('select').at(0).simulate('change', {
+        target: {value: value }
+    });
+    expect(wrapper.state('tag')).toBe(value);
+});
+
+test('should handle toggle button click correctly', () => {
+    const val = wrapper.state('selectHidden');
+    wrapper.find('button').at(0).simulate('click');
+    expect(wrapper.state('selectHidden')).toBe(!val);
 });
 
 test('should handle name change correctly', () => {
@@ -47,6 +68,6 @@ test('should handle docsLink change correctly', () => {
 });
 
 test('should handle button click correctly', () => {
-    wrapper.find('button').simulate('click');
+    wrapper.find('button').at(1).simulate('click');
     expect(onSubmit).toHaveBeenLastCalledWith(libraryItems[0]);
 });

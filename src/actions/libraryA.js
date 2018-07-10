@@ -13,6 +13,10 @@ export const addLibraryItem = (libraryItem = libraryItemDefault) => {
         libraryItem: {
             ...libraryItem,
             id: uuid()
+        },
+        tag: {
+            id: uuid(),
+            name: libraryItem.tag
         }
     }
 }
