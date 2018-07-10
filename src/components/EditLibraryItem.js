@@ -3,13 +3,13 @@ import {connect} from 'react-redux';
 import LibraryItemForm from './LibraryItemForm';
 import { editLibraryItem, rempveLibraryItem } from '../actions/libraryA';
 
-class EditLibraryItem extends React.Component {
+export class EditLibraryItem extends React.Component {
     onSubmit = (libraryItem) => {
-        this.props.dispatch(editLibraryItem(libraryItem));
+        this.props.editLibraryItem(libraryItem);
         this.props.history.push("/");
     }
     onClick = () => {
-        this.props.dispatch(rempveLibraryItem(this.props.libraryItem.id));
+        this.props.removeLibraryItem(this.props.libraryItem.id);
         this.props.history.push("/");
     }
     render () {
@@ -28,5 +28,12 @@ const mapStateToProps = (state, props) => {
     }
 }
 
-const ConnectedEditLibraryItem = connect(mapStateToProps)(EditLibraryItem)
+const mapDispatchToProps = (dispatch) => {
+    return {
+        editLibraryItem: (libraryItem) => dispatch(editLibraryItem(libraryItem)),
+        removeLibraryItem: (id) => dispatch(removeLibraryItem(id))
+    }
+}
+
+const ConnectedEditLibraryItem = connect(mapStateToProps, mapDispatchToProps)(EditLibraryItem)
 export default ConnectedEditLibraryItem;

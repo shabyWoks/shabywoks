@@ -1,0 +1,58 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render library list correctly when items available 1`] = `
+<div>
+  <Connect(LibraryItem)
+    item={
+      Object {
+        "description": "no description",
+        "id": "1",
+        "name": "react-redux",
+        "tag": "React",
+      }
+    }
+    key="1"
+  />
+  <Connect(LibraryItem)
+    item={
+      Object {
+        "description": "no description",
+        "id": "2",
+        "name": "react-router-dom",
+        "tag": "React",
+      }
+    }
+    key="2"
+  />
+  <Connect(LibraryItem)
+    item={
+      Object {
+        "description": "no description",
+        "id": "3",
+        "name": "lodash",
+        "tag": "Node",
+      }
+    }
+    key="3"
+  />
+  <Connect(LibraryItem)
+    item={
+      Object {
+        "description": "no description",
+        "id": "4",
+        "name": "numeral",
+        "tag": "Node",
+      }
+    }
+    key="4"
+  />
+</div>
+`;
+
+exports[`should render library list correctly when items not available 1`] = `
+<div>
+  <h4>
+    No items yet in the library
+  </h4>
+</div>
+`;

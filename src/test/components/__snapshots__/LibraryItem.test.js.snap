@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render library item correctly 1`] = `
+<Link
+  replace={false}
+  to="/edit-library-item/1"
+>
+  <div>
+    React
+     | 
+    react-redux
+     | 
+    no description
+  </div>
+</Link>
+`;

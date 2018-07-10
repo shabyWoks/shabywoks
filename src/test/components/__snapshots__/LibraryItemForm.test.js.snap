@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should have rendered library item form correctly 1`] = `
+<div>
+  Tag Name: 
+  <input
+    onChange={[Function]}
+    type="text"
+    value="React"
+  />
+   
+  <br />
+  Name: 
+  <input
+    onChange={[Function]}
+    type="text"
+    value="react-redux"
+  />
+   
+  <br />
+  Description: 
+  <input
+    onChange={[Function]}
+    type="text"
+    value="no description"
+  />
+   
+  <br />
+  Docs Link: 
+  <input
+    onChange={[Function]}
+    type="text"
+  />
+   
+  <br />
+  <button
+    onClick={[Function]}
+  >
+    ADD
+  </button>
+</div>
+`;

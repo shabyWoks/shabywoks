@@ -3,10 +3,13 @@ import {connect} from 'react-redux';
 import LibraryItem from './LibraryItem';
 import {selectorLibraryItem} from '../selectors/libraryItem';
 
-const LibraryList = (props) => {
+export const LibraryList = (props) => {
     return (
         <div>
             {
+                props.libraryItems.length === 0 ?
+                   <h4>No items yet in the library</h4> 
+                :
                 props.libraryItems.map((libraryItem, i) => {
                     return <LibraryItem key={libraryItem.id} item={libraryItem} /> ;
                 })

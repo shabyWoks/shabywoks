@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render library list filter correctly 1`] = `
+<div>
+  Tags : 
+  <input
+    onChange={[Function]}
+    type="text"
+    value="r"
+  />
+   
+  <br />
+  SortBy Name :
+  <select
+    onChange={[Function]}
+    value="asc"
+  >
+    <option
+      value="asc"
+    >
+      Ascending
+    </option>
+    <option
+      value="dsc"
+    >
+      Descending
+    </option>
+  </select>
+</div>
+`;

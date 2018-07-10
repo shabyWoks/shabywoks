@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render edit library item correctly 1`] = `
+<div>
+  <LibraryItemForm
+    libraryItem={
+      Object {
+        "description": "no description",
+        "id": "1",
+        "name": "react-redux",
+        "tag": "React",
+      }
+    }
+    onSubmit={[Function]}
+  />
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</div>
+`;

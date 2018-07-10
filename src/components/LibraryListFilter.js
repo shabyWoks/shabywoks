@@ -2,18 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {setFilterText, sortByNameAsc, sortByNameDsc} from '../actions/filtersA';
 
-class LibraryListFilter extends React.Component {
+export class LibraryListFilter extends React.Component {
     onTextChange = (e) => {
         const data = e.target.value;
-        this.props.dispatch(setFilterText(data));
+        this.props.setFilterText(data);
     }
     onSortChange = (e) => {
         const data = e.target.value;
         if(data === 'asc'){
-            this.props.dispatch(sortByNameAsc());
+            this.props.sortByNameAsc();
         }
         else if(data === 'dsc'){
-            this.props.dispatch(sortByNameDsc());
+            this.props.sortByNameDsc();
         }
     }
     render () {
@@ -36,6 +36,14 @@ const mapStateToProps = (state) => {
     }
 }
 
-const ConnectedLibraryListFilter = connect(mapStateToProps)(LibraryListFilter);
+const mapDispatchToProps = (dispatch) => {
+    return {
+        setFilterText: (data) => dispatch(setFilterText(data)),
+        sortByNameAsc: () => dispatch(sortByNameAsc()),
+        sortByNameDsc: () => dispatch(sortByNameDsc())
+    }
+}
+
+const ConnectedLibraryListFilter = connect(mapStateToProps, mapDispatchToProps)(LibraryListFilter);
 
 export default ConnectedLibraryListFilter;

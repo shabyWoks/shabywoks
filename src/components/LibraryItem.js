@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
-const LibraryItem = (props) => {
+export const LibraryItem = (props) => {
     return (
         <Link to={`/edit-library-item/${props.item.id}`}>
             <div>
