@@ -40,7 +40,6 @@ module.exports = (env) => {
             contentBase: path.join(__dirname, 'public'),
             publicPath: '/dist/',
             historyApiFallback: true
-        },
-        mode: process.env.NODE_ENV
+        }
     }
 }
