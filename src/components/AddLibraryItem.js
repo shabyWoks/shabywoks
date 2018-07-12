@@ -1,11 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import LibraryItemForm from './LibraryItemForm';
-import {addLibraryItem} from '../actions/libraryA';
+import {startAddLibraryItem} from '../actions/libraryA';
 
 export class AddLibraryItem extends React.Component {
     onSubmit = (libraryItem) => {
-        this.props.addLibraryItem(libraryItem);
+        this.props.startAddLibraryItem(libraryItem);
         this.props.history.push('/');
     }
     render () {
@@ -21,7 +21,7 @@ export class AddLibraryItem extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        addLibraryItem: (libraryItem) => dispatch(addLibraryItem(libraryItem))
+        startAddLibraryItem: (libraryItem) => dispatch(startAddLibraryItem(libraryItem))
     }
 }
 

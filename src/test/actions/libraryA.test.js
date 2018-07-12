@@ -1,5 +1,10 @@
 import * as libraryA from '../../actions/libraryA';
 import libraryItems from '../fixtures/libraryItems';
+import configureMockStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
+import database from '../../firebase/firebase';
+
+const createMockStore = configureMockStore([thunk]);
 
 test('should execute remove library item correctly with value', () => {
     const ItemId= "xyz";
@@ -27,44 +32,83 @@ test('should execute edit library item correctly with value', () => {
 });
 
 test('should execute add library item correctly with value', () => {
-    const action = libraryA.addLibraryItem({
-        name: libraryItems[0].name,
-        tag: libraryItems[0].tag,
-        description: libraryItems[0].description,
-        docsLink: libraryItems[0].docsLink,
-    });
+    const action = libraryA.addLibraryItem(libraryItems[0]);
     expect(action).toEqual({
         type: 'ADD_LIBRARY_ITEM',
-        libraryItem: {
-            ...libraryItems[0],
-            id: expect.any(String)
-        },
+        libraryItem: libraryItems[0],
         tag: {
-            id: expect.any(String),
+            id: libraryItems[0].tag.toLowerCase(),
             name: libraryItems[0].tag
         }
         
     });
 });
 
-test('should execute add library item correctly with default value', () => {
-    const libraryItemDefault = {
-        name: '',
-        tag: '',
-        description: '',
-        docsLink: ''
+test('should add library items to database and store', (done) => {
+    const store = createMockStore({});
+    const libraryItemData = {
+        name: libraryItems[0].name,
+        docsLink: libraryItems[0].docsLink,
+        tag: libraryItems[0].tag,
+        description: libraryItems[0].description
     };
-    const action = libraryA.addLibraryItem();
-    expect(action).toEqual({
-        type: 'ADD_LIBRARY_ITEM',
-        libraryItem: {
-            ...libraryItemDefault,
-            id: expect.any(String)
-        },
-        tag: {
-            id: expect.any(String),
-            name: ''
-        }
-        
+    store.dispatch(libraryA.startAddLibraryItem(libraryItemData))
+    .then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'ADD_LIBRARY_ITEM',
+            libraryItem: {
+                ...libraryItems[0],
+                id: expect.any(String)
+            },
+            tag: {
+                id: libraryItems[0].tag.toLowerCase(),
+                name: libraryItems[0].tag
+            }
+        });
+
+        database.ref(`library/libraryItems/${actions[0].libraryItem.id}`)
+                .once('value')
+                .then((snapshot) => {
+                    expect(snapshot.val()).toEqual(libraryItemData);
+
+                    database.ref(`library/tags/${libraryItemData.tag.toLowerCase()}`)
+                        .once('value')
+                        .then((snapshot) => {
+                            expect(snapshot.val()).toBe(libraryItemData.tag);
+                            done();
+                        });
+                });
+    });
+});
+
+test('should add default library items to database and store', (done) => {
+    const store = createMockStore({});
+    const libraryItemData = {
+        name: '',
+        docsLink: '',
+        tag: '',
+        description: ''
+    };
+    store.dispatch(libraryA.startAddLibraryItem())
+    .then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'ADD_LIBRARY_ITEM',
+            libraryItem: {
+                ...libraryItemData,
+                id: expect.any(String)
+            },
+            tag: {
+                id: '',
+                name: ''
+            }
+        });
+        database.ref(`library/libraryItems/${actions[0].libraryItem.id}`)
+                .once('value')
+                .then((snapshot) => {
+                    expect(snapshot.val()).toEqual(libraryItemData);
+                    done();
+                });
     });
 });

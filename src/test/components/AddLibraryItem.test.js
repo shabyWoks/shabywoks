@@ -4,12 +4,12 @@ import {AddLibraryItem} from '../../components/AddLibraryItem';
 import libraryItems from '../fixtures/libraryItems';
 import LibraryItemForm from '../../components/LibraryItemForm';
 
-let addLibraryItem, history, wrapper;
+let startAddLibraryItem, history, wrapper;
 
 beforeEach(() => {
-    addLibraryItem = jest.fn();
+    startAddLibraryItem = jest.fn();
     history = {push: jest.fn()};
-    wrapper = shallow(<AddLibraryItem addLibraryItem={addLibraryItem} history={history}/>);
+    wrapper = shallow(<AddLibraryItem startAddLibraryItem={startAddLibraryItem} history={history}/>);
     
 });
 
@@ -19,6 +19,6 @@ test('should render add library item correctly', () => {
 
 test('should execute on submit button successfully', () => {
     wrapper.find(LibraryItemForm).prop('onSubmit')(libraryItems[0]);
-    expect(addLibraryItem).toHaveBeenLastCalledWith(libraryItems[0]);
+    expect(startAddLibraryItem).toHaveBeenLastCalledWith(libraryItems[0]);
     expect(history.push).toHaveBeenLastCalledWith("/");
 });

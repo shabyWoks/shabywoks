@@ -1,15 +1,15 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import LibraryItemForm from './LibraryItemForm';
-import { editLibraryItem, removeLibraryItem } from '../actions/libraryA';
+import { startEditLibraryItem, startRemoveLibraryItem } from '../actions/libraryA';
 
 export class EditLibraryItem extends React.Component {
     onSubmit = (libraryItem) => {
-        this.props.editLibraryItem(libraryItem);
+        this.props.startEditLibraryItem(libraryItem);
         this.props.history.push("/");
     }
     onClick = () => {
-        this.props.removeLibraryItem(this.props.libraryItem.id);
+        this.props.startRemoveLibraryItem(this.props.libraryItem.id);
         this.props.history.push("/");
     }
     render () {
@@ -30,8 +30,8 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        editLibraryItem: (libraryItem) => dispatch(editLibraryItem(libraryItem)),
-        removeLibraryItem: (id) => dispatch(removeLibraryItem(id))
+        startEditLibraryItem: (libraryItem) => dispatch(startEditLibraryItem(libraryItem)),
+        startRemoveLibraryItem: (id) => dispatch(startRemoveLibraryItem(id))
     }
 }
 

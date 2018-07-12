@@ -51,7 +51,16 @@ const libraryReducer = (state= libraryReducerDefault, action) => {
             return {
                 ...state,
                 libraryItems: state.libraryItems.filter((libraryItem) => libraryItem.id !== action.libraryItemId)
-            }
+            };
+        case 'SET_LIBRARY':
+            return {
+                tags: [
+                    ...action.library.tags
+                ],
+                libraryItems: [
+                    ...action.library.libraryItems
+                ]
+            };
         default:
             return state;
     }
