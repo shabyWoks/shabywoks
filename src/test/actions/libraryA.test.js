@@ -112,3 +112,130 @@ test('should add default library items to database and store', (done) => {
                 });
     });
 });
+
+test('should edit library items in database and store', (done) => {
+    const library = {};
+    const tags = {
+        react: 'React',
+        node: 'Node'
+    };
+    const libraryItemss = [];
+    libraryItems.forEach((libraryItm) => {
+        libraryItemss[libraryItm.id] = {tag: libraryItm.tag, name: libraryItm.name, description: libraryItm.description, docsLink: libraryItm.docsLink};
+    });
+
+    library['tags'] = tags;
+    library['libraryItems'] = libraryItemss;
+    database.ref('library').set(library).then(() => {});
+    
+    const store = createMockStore({});
+    const libraryItemData = {
+        id: '1',
+        name: 'react-router',
+        docsLink: libraryItems[0].docsLink,
+        tag: libraryItems[0].tag,
+        description: libraryItems[0].description
+    };
+    store.dispatch(libraryA.startEditLibraryItem(libraryItemData))
+    .then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'EDIT_LIBRARY_ITEM',
+            libraryItem: libraryItemData
+        });
+
+        database.ref(`library/libraryItems/${actions[0].libraryItem.id}`)
+                .once('value')
+                .then((snapshot) => {
+                    expect(snapshot.val()).toEqual({
+                        name: libraryItemData.name,
+                        tag: libraryItemData.tag,
+                        description: libraryItemData.description,
+                        docsLink: libraryItemData.docsLink
+                    });
+                    done();
+                });
+
+    })
+});
+
+test('should remove library item in database and store', (done) => {
+    const library = {};
+    const tags = {
+        react: 'React',
+        node: 'Node'
+    };
+    const libraryItemss = [];
+    libraryItems.forEach((libraryItm) => {
+        libraryItemss[libraryItm.id] = {tag: libraryItm.tag, name: libraryItm.name, description: libraryItm.description, docsLink: libraryItm.docsLink};
+    });
+
+    library['tags'] = tags;
+    library['libraryItems'] = libraryItemss;
+    database.ref('library').set(library).then(() => {});
+    
+    const store = createMockStore({});
+    const libraryItemId = '1';
+    store.dispatch(libraryA.startRemoveLibraryItem(libraryItemId))
+    .then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'REMOVE_LIBRARY_ITEM',
+            libraryItemId: libraryItemId
+        });
+
+        database.ref(`library/libraryItems/${libraryItemId}`)
+                .once('value')
+                .then((snapshot) => {
+                    expect(snapshot.val()).toBe(null);
+                    done();
+                });
+
+    })
+});
+
+test('should set library item from database in store', (done) => {
+    const library = {};
+    const tags = {
+        react: 'React',
+        node: 'Node'
+    };
+    const libraryItemss = [];
+    libraryItems.forEach((libraryItm) => {
+        libraryItemss[libraryItm.id] = {tag: libraryItm.tag, name: libraryItm.name, description: libraryItm.description, docsLink: libraryItm.docsLink};
+    });
+
+    library['tags'] = tags;
+    library['libraryItems'] = libraryItemss;
+    database.ref('library').set(library).then(() => {});
+    
+    const store = createMockStore({});
+    const libraryItemId = '1';
+    store.dispatch(libraryA.startSetLibraryItem())
+    .then(() => {
+        const actions = store.getActions();
+        expect(actions[0]).toEqual({
+            type: 'SET_LIBRARY',
+            library: {
+                tags: [{id: 'node', name: 'Node'}, {id: 'react', name: 'React'}],
+                libraryItems: libraryItems
+            }
+        });
+        done();
+    });
+});
+
+test('should set library correctly', () => {
+    const library = {};
+    const tags = [
+        {id: 'react', name: 'React'},
+        {id: 'node', name: 'Node'}
+    ];
+    library['tags'] = tags;
+    library['libraryItems'] = libraryItems;
+    const state = libraryA.setLibraryItem(library);
+    expect(state).toEqual({
+        type: 'SET_LIBRARY',
+        library: library
+    });
+})

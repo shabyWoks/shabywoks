@@ -63,7 +63,7 @@ export const editLibraryItem = (libraryItem) => {
 
 export const startEditLibraryItem = (libraryItem) => {
     return (dispatch) => {
-        database.ref(`library/libraryItems/${libraryItem.id}`)
+        return database.ref(`library/libraryItems/${libraryItem.id}`)
                 .set({
                     name: libraryItem.name,
                     tag: libraryItem.tag,
@@ -86,24 +86,12 @@ export const removeLibraryItem = (libraryItemId = '-1') => {
 export const startRemoveLibraryItem = (libraryItemId = '-1') => {
     return (dispatch) => {
         return database.ref(`library/libraryItems/${libraryItemId}`)
-                .once('value')
-                .then((snapshot) => {
-                    if(snapshot.val() === null){
-                        dispatch(removeLibraryItem());
-                    }
-                    else{
-                        database.ref(`library/libraryItems/${libraryItemId}`)
-                                .set(null)
-                                .then(() => {
-                                    dispatch(removeLibraryItem(libraryItemId));
-                                })
-                                .catch((e) => {
-                                    console.log('Error in removing Library Item..');
-                                });
-                    }
+                .set(null)
+                .then(() => {
+                    dispatch(removeLibraryItem(libraryItemId));
                 })
                 .catch((e) => {
-                    console.log('Error in fetching Library Item..');
+                    console.log('Error in removing Library Item..');
                 });
     }
 }
