@@ -13,6 +13,7 @@ const jsx = (
 );
 
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
 store.dispatch(startSetLibraryItem()).then(() => {
     ReactDOM.render(jsx, document.getElementById('app'));
 });
