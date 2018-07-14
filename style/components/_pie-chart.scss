@@ -1,0 +1,40 @@
+.pie {
+    position: absolute;
+    top: 0rem;
+    width:450px;
+    height:450px;
+    overflow:hidden;
+    left:0px;
+    -webkit-transform-origin:left bottom;
+    transform-origin:left bottom;
+    border-radius:0 450px 0 0px;
+    transition: 1s all;
+    opacity: 0.5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie:nth-of-type(1) {
+	background-color:blue;	
+}
+// .pie:nth-of-type(2):AFTER,
+.pie:nth-of-type(2) {
+	background-color:green;	
+}
+// .pie:nth-of-type(3):AFTER,
+.pie:nth-of-type(3) {
+	background-color:red;	
+}
+// .pie:nth-of-type(4):AFTER,
+.pie:nth-of-type(4) {
+	background-color:orange;	
+}
+
+.pie-content{
+    display: inline-block;
+    color: white;
+    transform: rotate(-45deg) translateX(50px);
+}
+
+

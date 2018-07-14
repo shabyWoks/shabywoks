@@ -1,0 +1,45 @@
+.parallax {
+    background-image:  url('/images/img1.jpg');
+    height: 100%; 
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.p {
+    height:500px;
+    background-color:blue;
+    font-size:36px;
+}
+
+.dashboard-class{
+    height: 100%;
+    background-color: cadetblue;
+}
+
+.pie-detail{
+    color: rgba(255,255,255,1);
+    font-size: 3.2rem;
+    position: relative;
+    top:147px;
+    left: 844px;
+    display: inline-block;
+    p {
+        background-color: red;
+        padding: 1.6rem;
+        margin: 0.1rem;
+        min-width: 35rem;
+        opacity: 0.8;
+        letter-spacing: 0.1rem;
+    }
+}
+
+.pie-component{
+    color: rgba(255,255,255,1);
+    font-size: 3.2rem;
+    position: relative;
+    top: -11.7rem;
+    left: -28rem;
+}

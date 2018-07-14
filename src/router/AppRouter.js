@@ -9,7 +9,7 @@ import EditLibraryItem from '../components/EditLibraryItem';
 const AppRouter = (props) => {
     return (
         <BrowserRouter>
-            <div>
+            <div className="app-router-class">
                 <Header />
                 <Switch>
                     <Route path="/" component={Dashboard} exact={true} />
