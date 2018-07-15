@@ -1,5 +1,5 @@
 .parallax {
-    background-image:  url('/images/img1.jpg');
+    
     height: 100%; 
     background-attachment: fixed;
     background-position: center;
@@ -9,8 +9,7 @@
 }
 
 .p {
-    height:500px;
-    background-color:blue;
+    background-color:rgb(255, 255, 255);
     font-size:36px;
 }
 
@@ -20,26 +19,97 @@
 }
 
 .pie-detail{
-    color: rgba(255,255,255,1);
+    color: rgb(255, 255, 255);
     font-size: 3.2rem;
     position: relative;
     top:147px;
-    left: 844px;
+    left: 794px;
     display: inline-block;
     p {
-        background-color: red;
+        background-color: #ffffff00;
         padding: 1.6rem;
         margin: 0.1rem;
         min-width: 35rem;
-        opacity: 0.8;
         letter-spacing: 0.1rem;
+        font-weight: bold;
+    }
+    p:nth-of-type(1){
+        font-size: 4.2rem;
+        font-weight: bolder;
     }
 }
 
 .pie-component{
-    color: rgba(255,255,255,1);
+    color: rgb(5, 5, 5);
     font-size: 3.2rem;
     position: relative;
     top: -11.7rem;
     left: -28rem;
 }
+
+.p-storyline-header{
+    color: #52c1c1;
+    margin-bottom: 15rem;
+    padding: 1.6rem 0;
+    font-size: 10rem;
+}
+
+.img-round {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 20rem;
+}
+
+.p-no-margin {
+    margin: 0;
+    text-align: center;
+}
+
+.font-big {
+    font-size: 4.8rem;
+}
+
+.font-mid {
+    font-size: 3.2rem;
+}
+
+.font-small {
+    font-size: 1.6rem;
+}
+
+.p-storyline-1 {
+    color: #52c1c1;
+    font-weight: 600;
+    font-size: 4.8rem;
+    margin: 0;
+    text-align: center;
+}
+
+.p-storyline-2 {
+    color: #52c1c1;
+    font-size: 2.4rem;
+    margin: 0;
+    text-align: center;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.skills {
+    color: white;
+    font-size: 10rem;
+    font-weight: bold;
+    letter-spacing: 0.3;
+}
+
+.pad-lg-ud {
+    padding: 4.8rem 0;
+}
+
+.pad-lg-d{
+    padding-bottom: 4.8rem;
+}
+
+
+

@@ -1,8 +1,32 @@
 import React from 'react';
+import CircularRate from './CircularRate';
+import Storyline from './Storyline';
+import PieWheel from './PieWheel';
 
 class Dashboard extends React.Component {
     selected= 1;
     start = [45, 135, 225, 315];
+    circularRateBox= [
+        { name: 'Core Java', value: 70, color: '#00f0ff' },
+        { name: 'C', value: 40, color: '#171818' },
+        { name: 'SQL', value: 60, color: '#e51616' },
+        { name: 'JavaScript', value: 65, color: '#000000' },
+        { name: 'Programming', value: 75, color: '#28cd00' }
+    ];
+
+    storyLine = [
+        { imageUrl: '/images/born.jpg', head: 'BORN', detail: 'APRIL 04, 1994'},
+        { imageUrl: '/images/school.jpg', head: 'HIGH SCHOOL', detail: 'SHREE JAIN, 2013'},
+        { imageUrl: '/images/graduate.jpg', head: 'GRADUATION', detail: 'JADAVPUR UNIVERSITY, 2018'}
+    ];
+
+    pieComponent = [
+        {head: 'Introducing', color:'#52c1c1'},
+        {head: 'Education', color:'#da3131'},
+        {head: 'Experience', color:'#8531da'},
+        {head: "That's Me", color:'#dab031'}
+    ]
+
     constructor(props){
         super(props);
         this.state = {
@@ -61,25 +85,31 @@ class Dashboard extends React.Component {
         }
     }
 
+    
+
     render() {
         return (
             <div className='dashboard-class'>
-                <div className="parallax">
+                <div className="parallax" style={{backgroundImage: 'url(/images/img1.jpg)'}}>
                     <div className="pie-component">
-                        <div className= {`pie`} style= {{transform : `rotate(${this.start[0]}deg)`}} onClick={this.rotate.bind(this, 1)}>
-                            <div className= "pie-content">Introducing</div>
-                        </div>
-                        <div className= {`pie`} style= {{transform : `rotate(${this.start[1]}deg)`}} onClick={this.rotate.bind(this, 2)}>
-                            <div className= "pie-content">Education</div>
-                        </div>
-                        <div className= {`pie`} style= {{transform : `rotate(${this.start[2]}deg)`}} onClick={this.rotate.bind(this, 3)}>
-                            <div className= "pie-content">Experience</div>
-                        </div>
-                        <div className= {`pie`} style= {{transform : `rotate(${this.start[3]}deg)`}} onClick={this.rotate.bind(this, 4)}>
-                            <div className= "pie-content">That's Me</div>
-                        </div>
+                        {this.pieComponent.map((piec, i) => <PieWheel index= {i} onClick= {this.rotate} selected={this.selected} start={this.start[i]} color={piec.color} head={piec.head}/>)}
                     </div>
                     { this.renderContent() }
+                </div>
+                <div className="p pad-lg-d">
+                    <div className="p-storyline-header flex-center">MY STORYLINE</div>
+                    <div className="flex-center-space-around">
+                        {this.storyLine.map((story) => <Storyline imageUrl= {story.imageUrl} head= {story.head} detail= {story.detail} /> )}
+                    </div>
+                </div>
+                <div className="parallax flex-center" style={{backgroundImage: 'url(/images/img2.jpg)', height: '60%'}}>
+                    <div className="skills">THE SKILLS</div>
+                </div>
+                <div className="p">
+                    <div className="p-rateline-header flex-center">HOW DO I RATE MYSELF ?</div>
+                    <div className="flex-center-space-around pad-lg-ud">
+                        {this.circularRateBox.map((box) => <CircularRate color={box.color} value= {box.value} name= {box.name}/> )}
+                    </div>
                 </div>
             </div>
         );

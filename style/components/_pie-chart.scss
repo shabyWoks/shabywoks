@@ -9,32 +9,36 @@
     transform-origin:left bottom;
     border-radius:0 450px 0 0px;
     transition: 1s all;
-    opacity: 0.5;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .pie:nth-of-type(1) {
-	background-color:blue;	
+	background-color:#52c1c1;
 }
 // .pie:nth-of-type(2):AFTER,
 .pie:nth-of-type(2) {
-	background-color:green;	
+	background-color:#da3131;	
 }
 // .pie:nth-of-type(3):AFTER,
 .pie:nth-of-type(3) {
-	background-color:red;	
+	background-color:#8531da;	
 }
 // .pie:nth-of-type(4):AFTER,
 .pie:nth-of-type(4) {
-	background-color:orange;	
+    background-color:#dab031;
 }
 
 .pie-content{
     display: inline-block;
     color: white;
     transform: rotate(-45deg) translateX(50px);
+}
+
+.pie-active {
+    box-shadow: 0 0 2rem 0rem rgb(0, 0, 0);
+    z-index: 2;
 }
 
 

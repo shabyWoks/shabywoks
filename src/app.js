@@ -14,7 +14,7 @@ const jsx = (
     </Provider>
 );
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(jsx, document.getElementById('app'));
 
 store.dispatch(startSetLibraryItem()).then(() => {
     ReactDOM.render(jsx, document.getElementById('app'));

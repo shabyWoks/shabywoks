@@ -1,0 +1,30 @@
+.rate-meter {
+    width: 20rem;
+    height: 20rem;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.rate-meter-value {
+    position: absolute;
+    border: 0.7rem solid rgba(182, 182, 182, 0.5);
+    background-color: rgba(182, 182, 182, 0.2);
+    z-index: 0;
+    margin-top: -2.1rem;
+}
+
+.p-rateline-1{
+    color: #436767;
+    font-weight: 200;
+    font-size: 3.6rem;
+    margin: 0;
+    text-align: center;
+    letter-spacing: 0.2rem;
+}
+
+.p-rateline-header{
+    color: #52c1c1;
+    margin-bottom: 5rem;
+    padding: 1.6rem 0;
+    font-size: 5rem;
+}
