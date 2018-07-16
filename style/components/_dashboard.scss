@@ -96,11 +96,23 @@
     font-weight: bold;
 }
 
+.bold-200 {
+    font-weight: 200;
+}
+
+.bold-500 {
+    font-weight: 500;
+}
+
 .skills {
+    color: white;
     color: white;
     font-size: 10rem;
     font-weight: bold;
-    letter-spacing: 0.3;
+    height: 100%;
+    width: 100%;
+    background-color: #80808066;
+    
 }
 
 .pad-lg-ud {
@@ -111,5 +123,11 @@
     padding-bottom: 4.8rem;
 }
 
+.pad-mid-ud {
+    padding: 3.2rem 0;
+}
 
+.banner-bg{
+    background-color: #808080cc;
+}
 

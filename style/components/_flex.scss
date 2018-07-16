@@ -4,6 +4,12 @@
     justify-content: center;
 }
 
+.flex-start {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .flex-center-space-around {
     display: flex;
     align-items: center;
