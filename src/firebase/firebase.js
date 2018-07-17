@@ -12,5 +12,6 @@ var config = {
   firebase.initializeApp(config);
 
   const database = firebase.database();
+  // const emailProvideer = firebase.auth.
 
   export {firebase, database as default };

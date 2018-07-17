@@ -1,5 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import { startLogout } from '../actions/auth';
+import {connect} from 'react-redux';
 
 const Header = (props) => {
     return (
@@ -7,9 +9,29 @@ const Header = (props) => {
             <ul>
                 <Link className="header-link" to="/" > Dashboard </Link>
                 <Link className="header-link" to="/my-library" > My Library </Link>
+                {
+                    !props.uid ? 
+                    <Link className="header-link" to="/login">Log In</Link> :
+                    <button className="header-link" onClick={props.startLogout}>Log Out</button>
+                }
+                
             </ul>
         </div>
     )
 }
 
-export default Header;
+const mapStateToProps = (state) => {
+    return {
+        uid: state.auth.uid
+    };
+}
+
+const mapDispatchToProps = (dispatch) => {
+    return () => ({
+        startLogout: () => dispatch(startLogout())
+    });
+}
+
+const ConnectedHeader = connect(mapStateToProps, mapDispatchToProps)(Header);
+
+export default ConnectedHeader;

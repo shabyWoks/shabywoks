@@ -5,12 +5,15 @@
         padding: 2.4rem 0;
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        justify-content: flex-end;
         .header-link {
             text-decoration: none;
             color: #52c1c1;
             margin: 0 1.6rem;
             text-shadow: 2px 0px 5px;
+            background-color: white;
+            border: none;
+            cursor: pointer;
         }
     }
 }

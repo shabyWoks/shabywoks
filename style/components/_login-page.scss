@@ -1,0 +1,34 @@
+.login-body{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #181818f5;
+}
+
+.login-body-2 {
+    background-color: white;
+    padding: 2.4rem 6.4rem;
+    box-shadow: 0 0 1rem 0 #ae0000;
+    min-width: 40rem;
+    div:nth-child(1){
+        font-size: 3.2rem;
+        margin: 3.2rem 0;
+    }
+    div:nth-child(2){
+        width: 100%;
+        button{
+            background-color: rgb(42, 143, 184);
+            border: none;
+            width: 100%;
+            padding: 1.2rem;
+            margin: 0.8rem 0.3rem;
+        }
+        input{
+            width: 100%;
+            font-size: 2.4rem;
+            padding: 0.8rem 0;
+            margin: 0.8rem 0;
+        }
+    }
+}

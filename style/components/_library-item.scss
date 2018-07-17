@@ -1,0 +1,25 @@
+.library-item-body {
+    background-color: #a2acae;
+    color: white;
+    box-shadow: 1px 4px 1rem 0px #dfdfdf;
+    margin-bottom: 0.1rem;
+    div {
+        padding: 1.6rem 3.2rem;
+        width: 20rem;
+        
+
+        &:nth-of-type(4){
+            text-decoration: none;
+            color: rgb(95, 191, 230);
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+        Link {
+            text-decoration: none;
+            color: white;
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import {createStore, combineReducers, compose, applyMiddleware} from 'redux';
 import libraryReducer from '../reducers/libraryR';
 import filterReducer from '../reducers/filtersR';
+import authReducer from '../reducers/authR';
 import thunk  from 'redux-thunk';
 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -15,7 +16,8 @@ const configureStore = () => {
             githubLink: '',
             webLink: '',
             library: libraryReducer,
-            filters: filterReducer
+            filters: filterReducer,
+            auth: authReducer
         }),
         composeEnhancer(applyMiddleware(thunk))
     );

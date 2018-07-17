@@ -18,8 +18,8 @@ export class LibraryListFilter extends React.Component {
     }
     render () {
         return (
-            <div>
-                Tags : <input type="text" value={this.props.filters.filterBy} onChange={this.onTextChange} /> <br />
+            <div className="ll-filter-body flex-center">
+                Tags : <input type="text" placeholder="Search Tag.." value={this.props.filters.filterBy} onChange={this.onTextChange} />
                 SortBy Name : 
                 <select value={this.props.filters.sortByName} onChange={this.onSortChange}>
                     <option value="asc">Ascending</option>
