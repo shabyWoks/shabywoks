@@ -29,7 +29,7 @@ class CircularRate extends React.Component {
     render () 
     {
         return (
-            <div className="flex-center flex-down">
+            <div className="flex-start flex-down">
                 <div 
                     className="flex-center flex-down rate-meter"
                     style= {

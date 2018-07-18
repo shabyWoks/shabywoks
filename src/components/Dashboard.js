@@ -11,9 +11,9 @@ class Dashboard extends React.Component {
     circularRateBox= [
         { name: 'Core Java', value: 80, color: '#00f0ff' },
         { name: 'C', value: 40, color: '#171818' },
+        { name: 'CODING', value: 75, color: '#28cd00' },        
         { name: 'SQL', value: 60, color: '#e51616' },
-        { name: 'JavaScript', value: 70, color: '#000000' },
-        { name: 'Programming', value: 75, color: '#28cd00' }
+        { name: 'JavaScript', value: 70, color: '#000000' }
     ];
 
     storyLine = [
