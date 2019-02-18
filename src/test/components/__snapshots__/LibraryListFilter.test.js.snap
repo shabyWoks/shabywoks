@@ -1,15 +1,16 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render library list filter correctly 1`] = `
-<div>
+<div
+  className="ll-filter-body flex-center"
+>
   Tags : 
   <input
     onChange={[Function]}
+    placeholder="Search Tag.."
     type="text"
     value="r"
   />
-   
-  <br />
   SortBy Name :
   <select
     onChange={[Function]}

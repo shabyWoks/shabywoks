@@ -1,7 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render library list correctly when items available 1`] = `
-<div>
+<div
+  className="library-list-body flex-start flex-down"
+>
+  <div
+    className="library-item-body flex-center"
+    style={
+      Object {
+        "backgroundColor": "white",
+        "color": "#a2acae",
+      }
+    }
+  >
+    <div>
+      Name
+    </div>
+    <div>
+      Tag
+    </div>
+    <div>
+      Description
+    </div>
+    <div
+      style={
+        Object {
+          "color": "#a2acae",
+        }
+      }
+    >
+      Links
+    </div>
+  </div>
   <Connect(LibraryItem)
     item={
       Object {
@@ -54,7 +84,9 @@ exports[`should render library list correctly when items available 1`] = `
 `;
 
 exports[`should render library list correctly when items not available 1`] = `
-<div>
+<div
+  className="library-list-body flex-start flex-down"
+>
   <h4>
     No items yet in the library
   </h4>

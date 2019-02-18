@@ -1,12 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render dashboard correctly 1`] = `
-<div>
-  <h1>
+<div
+  className="library-outer-body"
+>
+  <h1
+    className="library-outer-heading"
+  >
     Library
   </h1>
   <div>
     <button
+      className="library-add-new-button"
       onClick={[Function]}
     >
       Add New Item
