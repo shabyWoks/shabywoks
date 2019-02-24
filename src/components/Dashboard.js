@@ -83,7 +83,7 @@ class Dashboard extends React.Component {
             return (
                 <div className="pie-detail">
                     <p>Shubham Bhiwaniwala</p>
-                    <p>Software Engineer at YOI.</p>      
+                    <p>Software Engineer at Obopay.</p>      
                 </div>
             );
         } else if(this.selected === 2){

@@ -1,0 +1,25 @@
+.tg-body {
+  display         : inline-block;
+  font-size       : 10px;
+  letter-spacing  : 0.1px;
+  font-weight     : 400;
+  line-height     : 2;
+  color           : white;
+  background-color: cadetblue;
+  padding-left    : 5px;
+  padding-right   : 5px;
+  margin          : 2px 2px;
+  span {
+    &:nth-of-type(1) {
+      width         : 100px;
+      text-overflow : ellipsis;
+      overflow      : hidden;
+      text-transform: lowercase;
+      letter-spacing: 0.2px;
+    }
+    &:nth-of-type(2) {
+      margin-left   : 5px;
+    }
+  }
+
+}

@@ -3,6 +3,7 @@ import {Router, Switch, Route} from 'react-router-dom';
 import Dashboard from '../components/Dashboard';
 import Header from '../components/Header';
 import Library from '../components/Library';
+import Question from '../components/question/Question';
 import AddLibraryItem from '../components/AddLibraryItem';
 import EditLibraryItem from '../components/EditLibraryItem';
 import LoginPage from '../components/LoginPage';
@@ -20,6 +21,7 @@ const AppRouter = (props) => {
                 <Switch>
                     <Route path="/" component={Dashboard} exact={true} />
                     <Route path="/my-library" component={Library} />
+                    <Route path="/questions" component={Question} />
                     <PublicRoute path="/login" component={LoginPage} />
                     <PrivateRoute path="/add-new-library-item" component={AddLibraryItem} />
                     <PrivateRoute path="/edit-library-item/:id" component={EditLibraryItem} />

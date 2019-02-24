@@ -1,0 +1,49 @@
+.q-body {
+  width       : 400px;
+  height      : 250px;
+  position    : relative;
+  display     : inline-block;
+}
+
+.q-footer {
+  width         : 100%;
+  position      : absolute;
+  bottom        : 0px;
+  height        : 20%;
+  z-index       : 2;
+  box-shadow    : 0px -1px 4px 0px #888888;
+  border-radius : 0px 0px 2px 2px;
+}
+
+.q-footer-link {
+  position    : absolute;
+  right       : 0px;
+  bottom      : 0px;
+  font-size   : 12px;
+  line-height : 16px;
+  padding     : 10px 15px;
+}
+
+.q-img-body {
+  width           : 100%;
+  height          : 80%;
+  position        : absolute;
+}
+
+.q-img {
+  position  : absolute;
+  top       : 0px;
+  left      : 0px;
+  width     : 100%;
+  height    : 100%;
+  filter    : blur(1px);
+}
+
+.q-img-body-tag-holder {
+  max-width       : 250px;
+  display         : inline-block;
+  position        : absolute;
+  right           : 0px;
+  top             : 0px;
+  padding         : 5px;
+}

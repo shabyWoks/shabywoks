@@ -8,7 +8,14 @@ export const LibraryItem = (props) => {
                 <div>{ props.item.name }</div>
                 <div>{ props.item.tag }</div>
                 <div>{ props.item.description }</div>
-                <div><Link to={`/edit-library-item/${props.item.id}`}>EDIT</Link> | <a href="" >DOCS</a></div>
+                <div>
+                    <Link to={`/edit-library-item/${props.item.id}`}>
+                        EDIT
+                    </Link> | 
+                    <a target="_blank" href={props.item.docsLink}>
+                        DOCS
+                    </a>
+                </div>
             </div>
     );
 }

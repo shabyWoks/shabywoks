@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const ExpertiseItem = (props) => {
     return (
         <div className="flex-center flex-down" style={{marginBottom: '3.2rem'}}>
