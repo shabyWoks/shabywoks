@@ -36,14 +36,14 @@ class Question extends React.Component {
   }
 
   render () {
+    console.log(JSON.stringify(this.props))
     return (
       <div className= "q-body">
         <div className= "q-img-body">
           <img className= "q-img" src = {this.props.baseImageUrl} />
           <Badge src= {this.props.badge.imageUrl} tagName= {this.props.badge.tagName} />
           <div className="q-img-body-tag-holder">
-            {/* <Tag tagName="React" id="1" closeable="false" /> */}
-            { getAllTags(this.props.tags) }
+            { this.getAllTags(this.props.tags) }
           </div>
           <ImageComp src = {this.props.user.imageUrl} />
         </div>
