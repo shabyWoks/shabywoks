@@ -1,0 +1,35 @@
+.display-holder {
+  width         : 98%;
+  height        : 300px;
+  margin        : 5px 1%;
+  float         : left;
+  border-radius : 2px;
+  position      : relative;
+}
+
+.arrow {
+  position          : absolute;
+  width             : 50px;
+  height            : 50px;
+  background-color  : white;
+  border-radius     : 50%;
+  top               : 50%;
+  z-index           : 1;
+  cursor            : pointer;
+  transition        : 100ms;
+  box-shadow        : 0px 0px 4px 0px white;
+}
+
+.left-arrow {
+  left        : 0%;
+  transform   : translateX(-25px) translateY(-25px) translateX(15px);
+}
+
+.right-arrow {
+  right       : 0%;
+  transform   : translateX(25px) translateY(-25px) translateX(-15px);
+}
+
+.hide {
+  visibility: hidden;
+}

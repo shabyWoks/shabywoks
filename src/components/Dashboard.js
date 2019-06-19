@@ -9,41 +9,41 @@ class Dashboard extends React.Component {
     arr= ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f'];
     start = [45, 135, 225, 315];
     circularRateBox= [
-        { name: 'Core Java', value: 80, color: '#00f0ff' },
-        { name: 'C', value: 40, color: '#171818' },
-        { name: 'CODING', value: 75, color: '#28cd00' },        
-        { name: 'SQL', value: 60, color: '#e51616' },
-        { name: 'JavaScript', value: 70, color: '#000000' }
+        { name: 'Core Java',    value: 80, color: '#00f0ff' },
+        { name: 'C',            value: 40, color: '#171818' },
+        { name: 'CODING',       value: 75, color: '#28cd00' },        
+        { name: 'SQL',          value: 60, color: '#e51616' },
+        { name: 'JavaScript',   value: 70, color: '#000000' }
     ];
 
     storyLine = [
-        { imageUrl: '/images/born.jpg', head: 'BORN', detail: 'APRIL 04, 1994'},
-        { imageUrl: '/images/school.jpg', head: 'HIGH SCHOOL', detail: 'SHREE JAIN, 2013'},
-        { imageUrl: '/images/graduate.jpg', head: 'GRADUATION', detail: 'JADAVPUR UNIVERSITY, 2018'}
+        { imageUrl: '/images/born.jpg',     head: 'BORN',           detail: 'APRIL 04, 1994'},
+        { imageUrl: '/images/school.jpg',   head: 'HIGH SCHOOL',    detail: 'SHREE JAIN, 2013'},
+        { imageUrl: '/images/graduate.jpg', head: 'GRADUATION',     detail: 'JADAVPUR UNIVERSITY, 2018'}
     ];
 
     pieComponent = [
-        {head: 'Introducing', color:'#52c1c1'},
-        {head: 'Education', color:'#da3131'},
-        {head: 'Experience', color:'#8531da'},
-        {head: "That's Me", color:'#dab031'}
+        {head: 'Introducing',   color:'#52c1c1'},
+        {head: 'Education',     color:'#da3131'},
+        {head: 'Experience',    color:'#8531da'},
+        {head: "That's Me",     color:'#dab031'}
     ]
 
     expertise = [
-        {imageUrl: '/images/java.png', name: 'Java', accuracy: 80, hours: 500 },
-        {imageUrl: '/images/js.png', name: 'JavaScript', accuracy: 70, hours: 120 },
-        {imageUrl: '/images/angular.png', name: 'Angular', accuracy: 70, hours: 220 },
-        {imageUrl: '/images/css.png', name: 'CSS', accuracy: 60, hours: 180 },
-        {imageUrl: '/images/node.png', name: 'Node', accuracy: 52, hours: 60 },
-        {imageUrl: '/images/hibernate.png', name: 'Hibernate', accuracy: 50, hours: 40 },
-        {imageUrl: '/images/react.png', name: 'React', accuracy: 75, hours: 200 },
-        {imageUrl: '/images/spring.png', name: 'Spring', accuracy: 45, hours: 60 },
-        {imageUrl: '/images/redux.jpg', name: 'Redux', accuracy: 72, hours: 20 },
-        {imageUrl: '/images/android.png', name: 'Android', accuracy: 90, hours: 380 },
-        {imageUrl: '/images/dotnet.png', name: '.Net', accuracy: 55, hours: 360 },
-        {imageUrl: '/images/bootstrap.png', name: 'Bootstrap', accuracy: 55, hours: 100 },
-        {imageUrl: '/images/html.png', name: 'HTML', accuracy: 88, hours: 100 },
-        {imageUrl: '/images/sql.png', name: 'SQL', accuracy: 78, hours: 200 }
+        {imageUrl: '/images/java.png',      name: 'Java',       accuracy: 80, hours: 500    },
+        {imageUrl: '/images/js.png',        name: 'JavaScript', accuracy: 70, hours: 120    },
+        {imageUrl: '/images/angular.png',   name: 'Angular',    accuracy: 70, hours: 220    },
+        {imageUrl: '/images/css.png',       name: 'CSS',        accuracy: 60, hours: 180    },
+        {imageUrl: '/images/node.png',      name: 'Node',       accuracy: 52, hours: 60     },
+        {imageUrl: '/images/hibernate.png', name: 'Hibernate',  accuracy: 50, hours: 40     },
+        {imageUrl: '/images/react.png',     name: 'React',      accuracy: 75, hours: 200    },
+        {imageUrl: '/images/spring.png',    name: 'Spring',     accuracy: 45, hours: 60     },
+        {imageUrl: '/images/redux.jpg',     name: 'Redux',      accuracy: 72, hours: 20     },
+        {imageUrl: '/images/android.png',   name: 'Android',    accuracy: 90, hours: 380    },
+        {imageUrl: '/images/dotnet.png',    name: '.Net',       accuracy: 55, hours: 360    },
+        {imageUrl: '/images/bootstrap.png', name: 'Bootstrap',  accuracy: 55, hours: 100    },
+        {imageUrl: '/images/html.png',      name: 'HTML',       accuracy: 88, hours: 100    },
+        {imageUrl: '/images/sql.png',       name: 'SQL',        accuracy: 78, hours: 200    }
     ];
 
     constructor(props){

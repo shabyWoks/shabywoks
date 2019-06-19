@@ -36,20 +36,19 @@ class Question extends React.Component {
   }
 
   render () {
-    console.log(JSON.stringify(this.props))
     return (
       <div className= "q-body">
         <div className= "q-img-body">
-          <img className= "q-img" src = {this.props.baseImageUrl} />
-          <Badge src= {this.props.badge.imageUrl} tagName= {this.props.badge.tagName} />
+          <img className= "q-img" src = {this.props.questionDetails.baseImageUrl} />
+          <Badge src= {this.props.questionDetails.badge.imageUrl} tagName= {this.props.questionDetails.badge.tagName} />
           <div className="q-img-body-tag-holder">
-            { this.getAllTags(this.props.tags) }
+            { this.getAllTags(this.props.questionDetails.tags) }
           </div>
-          <ImageComp src = {this.props.user.imageUrl} />
+          <ImageComp src = {this.props.questionDetails.user.imageUrl} />
         </div>
         <div className= "q-footer">
           <div className="q-footer-link">
-            <a target= "_blank" href= {this.props.questionLink} >QUESTION</a> | <a href= {this.props.answerLink} target= "_blank" >ANSWER</a>
+            <a target= "_blank" href= {this.props.questionDetails.questionLink} >QUESTION</a> | <a href= {this.props.questionDetails.answerLink} target= "_blank" >ANSWER</a>
           </div>
         </div>
       </div>
